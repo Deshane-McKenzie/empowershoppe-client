@@ -2,7 +2,7 @@
 @use '../../styles/variables' as *;
 
 /* 
-* The styling for the header of the website that will be universal 
+* The styling for the header of the website that is universal 
 * accross all pages for mobile/tablet/desktop screen sizes
 */
 
@@ -196,6 +196,7 @@
 
                 &-wrapper {
                     padding: 10px 16px 13px;
+                    border-bottom: 1px solid darkgrey;
 
                         @include tablet {
                             padding: 10px 64px 13px;
