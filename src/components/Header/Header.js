@@ -17,6 +17,9 @@ function Header() {
       navigate('/shop');
     };
 
+    const handleAboutNavigation = () => {
+        navigate('/about');
+    }
 
 
     return (
@@ -30,8 +33,8 @@ function Header() {
             </div>
             <div className="header__wrapper">
                 <div className="header__nav">
-                    <h2 className="header__nav-1">Shop</h2>
-                    <h2 className="header__nav-2">About</h2>
+                    <h2 className="header__nav-1" onClick={handleNavigation}>Shop</h2>
+                    <h2 className="header__nav-2" onClick={handleAboutNavigation} >About</h2>
                 </div>
                 <img src={EmpowerShoppeLogo} className="header__logo" alt="EmpowerShoppe Logo" />
                 <div className="header__icon-wrapper" >
