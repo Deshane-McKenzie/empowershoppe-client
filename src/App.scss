@@ -1,0 +1,9 @@
+@use '../src/styles/fonts' as *;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Public Sans';
+    background-color: #f9f9ff;
+  }
+

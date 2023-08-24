@@ -1,0 +1,222 @@
+@use '../../styles/mixins' as *;
+@use '../../styles/variables' as *;
+
+/* 
+* The styling for the header of the website that will be universal 
+* accross all pages for mobile/tablet/desktop screen sizes
+*/
+
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+        &__container {
+            padding: 0 16px; 
+            border-bottom: 1px solid black;
+            background-color: #ccbc8e;
+
+                @include tablet {
+                    padding: 0px 64px;
+                }
+
+                @include desktop {
+                    padding: 0px 128px;
+                }
+        }
+
+        &__title {
+            font-size: 14px;
+
+                @include tablet {
+                    font-size: 16px;
+                }
+
+        }
+
+        &__icon {
+            width: 45px;
+            margin-left: 5px;
+            
+
+                @include tablet {
+                    width: 48px;    
+                }
+        } 
+}
+
+.header {
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        padding: 10px 16px;
+        width: 100%;
+
+            @include tablet {
+                align-items: center;
+                padding: 10px 64px;
+            }
+
+            @include desktop {
+                padding: 10px 128px;
+            }
+    }
+
+    &__nav {
+        display: none;
+
+            @include tablet {
+                display: initial;
+                margin-top: 15.5px;
+            }
+
+            @include desktop {
+                display: flex;
+                margin-top: 22px;
+            }
+        
+        &-1 {
+            font-size: 20px;
+
+                @include desktop {
+                    font-size: 23px;
+                    padding-right: 16px;
+                    border-right: 2px solid #001fbd;
+                }
+        }
+
+        &-2 {
+            font-size: 20px;
+            margin-right: 10px;
+
+                @include desktop {
+                    font-size: 23px;
+                    padding-left: 16px;
+                    margin-right: -85px;
+                }
+        }
+    }
+
+    &__logo {
+        width: 115px;
+
+            @include tablet {
+                width: 215px;
+            }
+
+            @include desktop {
+                width: 288px;
+            }
+    }
+
+    &__icon-wrapper {
+        @include tablet {
+            margin-top: 17px;
+        }
+    }
+
+    &__sign-in {
+        width: 37px;
+        padding-right: 16px;
+
+            @include tablet {
+                width: 40px;
+            }
+
+            @include desktop {
+                width: 44px;
+            }
+    }
+
+    &__add-to-cart {
+        width: 55px;
+        border-left: 2px solid #001fbd;
+        padding: 0 16px;
+
+            @include tablet {
+                width: 44px;
+                padding: 0 0 0 16px;
+            }
+
+            @include desktop {
+                width: 48px;
+            }
+    }
+
+    &__menu {
+        width: 40px;
+        border-left: 2px solid #001fbd;
+        padding-left: 16px;
+
+            @include tablet {
+                display: none;
+            }
+    }
+
+    &__search {
+        width: 100%;
+        height: 67px;
+        margin: 12px 0;
+        
+
+            &-wrapper {
+                width: 100%;
+                border: 6px solid darkgrey;
+                height: 67px;
+                display: flex;
+                justify-content: center;
+            }
+
+            &-input {
+                border: none;
+                width: 100%;
+                padding: 0 20px;
+                font-size: 16px;
+            }
+
+            &-icon {
+                width: 18px;
+                padding: 18px 0;
+                margin-right: 20px;
+            }
+    }
+
+    &__content {
+        font-size: 14px;
+
+            @include tablet {
+                font-size: 15.5px;
+            }
+
+            @include desktop {
+                font-size: 19px;
+            }
+
+                &-wrapper {
+                    padding: 10px 16px 13px;
+
+                        @include tablet {
+                            padding: 10px 64px 13px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                }
+
+                &--focus {
+                    color: darkred;
+                }
+    } 
+
+    &__gift-icon {
+        display: none;
+
+            @include tablet {
+                display: initial;
+                width: 27px;
+                margin-right: 8px;
+            }
+    }
+}
