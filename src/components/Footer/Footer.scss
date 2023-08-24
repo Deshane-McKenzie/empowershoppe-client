@@ -1,2 +1,176 @@
 @use '../../styles/mixins' as *;
 @use '../../styles/variables' as *;
+
+
+
+.footer {
+
+    &__heading {
+        display: flex;
+        justify-content: center;
+        border-top: 1px solid darkgrey;
+        border-bottom: 1px solid darkgrey;
+        margin-top: 20px;
+        font-size: 18px;
+        padding: 10px 0;
+        font-weight: 700;
+        color: darkred;
+    }
+
+    &__sign-up {
+        margin: 0 60px 20px 60px;
+        text-align: center;
+        padding: 5px 0;
+        border: 1px solid black;
+
+            @include desktop {
+                margin: 0 350px 20px 350px;
+            }
+
+                &-wrapper {
+                    border-bottom: 1px solid darkgrey;
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                    background-color: #ccbc8e;
+                }
+
+                &-heading {
+                    font-size: 14px;
+                    text-align: center;
+                    background-color: #ccbc8e;
+                    color: black;
+                    padding: 20px 20px 10px 20px;
+                }
+
+                &-subheading {
+                    font-weight: 100;
+                    font-size: 12px;
+                    padding: 0 45px 12px;
+                    text-align: center;
+                    background-color: #ccbc8e;
+                    color: black;
+                }
+    }
+
+    &__links {
+        @include tablet{
+            display: flex;
+            align-items: center;
+            padding-top: 30px;
+        }
+      
+
+            &-container {
+                @include tablet {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+                    padding: 10px 134px 16px 54px;
+                    border-bottom: 1px solid darkgrey;
+                }
+
+                @include desktop {
+                    padding: 10px 255px 16px 153px;
+                }
+            }
+    }
+
+    &__logo {
+        display: none;
+
+            @include tablet {
+                display: initial;
+                width: 215px;
+            }
+    }
+
+    &__return {
+        font-size: 15px;
+        font-weight: 400;
+        display: flex;
+        justify-content: center;
+        color: darkred;
+        padding: 25px 0 15px 0;
+
+            @include tablet {
+                padding: 15px 0
+            }
+    }
+
+    &__privacy {
+        font-size: 15px;
+        font-weight: 400;
+        display: flex;
+        justify-content: center;
+        color: darkred;
+        margin-bottom: 30px;
+
+            @include tablet {
+                margin-bottom: initial;
+                padding-left: 25px;
+            }
+    }
+
+    &__copy-social-wrapper {
+        @include tablet{
+            display: flex;
+            justify-content: space-around;
+            padding: 5px 16px 16px;
+            align-items: center;
+        }
+
+        @include desktop {
+            padding: 5px 64px 16px;
+        }
+        
+    }
+
+    &__copyright {
+        font-size: 12px;
+        font-weight: 400;
+        display: flex;
+        justify-content: center;
+        margin: 15px 0 10px 0;
+        color: #001fbd;
+
+            @include tablet {
+                font-size: 13px;
+            }
+    }
+
+    &__social {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        padding: 16px;
+
+            @include tablet {
+                width: 50%;
+            }
+
+            @include desktop {
+                padding: 16px 0 16px 150px;
+            }
+
+                &-linkedin {
+                    width: 25px;
+                }
+
+                &-github {
+                    width: 25px;
+                }
+
+                &-insta {
+                    width: 25px;
+                }
+
+                &-twitter {
+                    width: 25px;
+                }
+
+                &-facebook {
+                    width: 25px;
+                }
+    }
+}
