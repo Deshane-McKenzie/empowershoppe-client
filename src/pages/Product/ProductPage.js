@@ -23,8 +23,7 @@ function ProductPage() {
 
     })
     .then((response) => {
-      setActiveProduct(response.data)
-      console.log(response.data)
+      setActiveProduct(response.data[0])
     })
     .catch((err) => { console.error(err) })
   }, [product_id]);
@@ -33,7 +32,7 @@ function ProductPage() {
     return (
       <>
       <div>
-        <img src={activeProduct[0].product_image} className="product-img" alt="Product" />
+        <img src={activeProduct.product_image} className="product-img" alt="Product" />
         <ProductPageList productDetails={productDetails}  activeProduct={activeProduct} />
       </div>
       </>

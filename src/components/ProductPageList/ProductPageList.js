@@ -9,9 +9,9 @@ function ProductPageList({productDetails, activeProduct}) {
     return (
         <>
         <div className="product__container">
-            <h2 className="product__section-title">If you need the {activeProduct[0].title} you might also need these:</h2>
+            <h2 className="product__section-title">If you need the {activeProduct.title} you might also need these:</h2>
                 <ul className="product__list-wrapper"  >
-                    {productDetails.filter((product) => product.product_id !== activeProduct[0].product_id).map((product, product_id) => (
+                    {productDetails.filter((product) => product.product_id !== activeProduct.product_id).map((product, product_id) => (
                         <li key={product_id} className="product__list">
                             <Link to={`/product/${product.product_id}`} className="product__link">
                                 <div className="product__component">
