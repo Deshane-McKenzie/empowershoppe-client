@@ -1,11 +1,11 @@
-
+import './ReturnPolicy.scss';
 
 
 function ReturnPolicy() {
     return (
       <>
       <div className="return__container">
-      <h1 className="return__title">RETURN POLICY</h1>
+      <h1 className="return__title">Return Policy</h1>
         <p className="return">At <strong>EmpowerShoppe</strong>, we are committed to providing you with quality products that enhance your experience. We understand that sometimes circumstances change, and we're here to ensure your satisfaction. Please review our return policy below for electronic and other physical items:</p>
 
           <h2 className="return__subtitle">1. 30-Day Return Window:</h2>
