@@ -10,21 +10,21 @@ function PrivacyPolicy() {
 
             <h2 className="privacy__subtitle">Information We Collect:</h2>
               <p>We collect and store personal information necessary for order processing, delivery, and payment processing. This may include but is not limited to:</p>
-            <ul>
-              <li>Full name</li>
-              <li>Delivery address</li>
-              <li>Contact information (email, phone number)</li>
-              <li>Payment information (credit card details)</li>
-            </ul>
+                <ul>
+                  <li>Full name</li>
+                  <li>Delivery address</li>
+                  <li>Contact information (email, phone number)</li>
+                  <li>Payment information (credit card details)</li>
+                </ul>
 
             <h2 className="privacy__subtitle-use">Use of Your Information:</h2>
               <p>We use your personal information solely for the purpose of:</p>
-            <ul>
-              <li>Processing your order and facilitating its delivery.</li>
-              <li>Processing payments for your specific order.</li>
-              <li>Communicating order updates and tracking information.</li>
-              <li>Responding to your inquiries and providing customer support.</li>
-            </ul>
+                <ul>
+                  <li>Processing your order and facilitating its delivery.</li>
+                  <li>Processing payments for your specific order.</li>
+                  <li>Communicating order updates and tracking information.</li>
+                  <li>Responding to your inquiries and providing customer support.</li>
+                </ul>
 
             <h2 className="privacy__subtitle-security">Data Security:</h2>
               <p>We take appropriate measures to safeguard your personal information against unauthorized access, disclosure, or alteration. Credit card information is stored on an order-by-order basis and is encrypted using industry-standard security protocols. Our representatives do not have access to your full credit card information.</p>

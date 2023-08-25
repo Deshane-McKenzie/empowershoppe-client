@@ -11,6 +11,14 @@
 
     &__container {
         padding: 0 16px;
+
+            @include tablet {
+                padding: 0 64px;
+            }
+
+            @include desktop {
+                padding: 0 128px;
+            }
     }
 
     &__title {
