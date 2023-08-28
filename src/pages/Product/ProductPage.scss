@@ -2,7 +2,49 @@
 @use '../../styles/variables' as *;
 
 
-.product-img {
-    width: 100%;
-    padding-top: 10px;
+.item {
+    font-size: 18px;
+    width: 150px;
+    font-weight: 400;
+
+        &__image {
+            width: 100%;
+        }
+
+        &__container {
+            padding: 0 16px;
+        }
+
+        &__headings {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+        }
+
+        &__price {
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        &__btn {
+
+            &-wrapper {
+                display: flex;
+                flex-direction: column;
+            }
+
+            &-checkout {
+
+            }
+        }
+
+        &__description {
+            padding: 40px 0;
+            font-size: 15px;
+            font-weight: 300;
+        }
+
+        &__reviews {
+
+        }
 }
