@@ -13,7 +13,7 @@ function ProductPageList({productDetails, activeProduct}) {
                 <ul className="product__list-wrapper"  >
                     {productDetails.filter((product) => product.product_id !== activeProduct.product_id).map((product, product_id) => (
                         <li key={product_id} className="product__list">
-                            <Link to={`/product/${product.product_id}`} className="product__link">
+                            <Link to={`/product/${product.product_id}`} className="product__link" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                                 <div className="product__component">
                                     <div>
                                         <img src={product.product_image} className="product__thumbnail" alt="Product Thumbnail" />
