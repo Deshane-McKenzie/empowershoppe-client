@@ -7,19 +7,29 @@ import HamburgerIcon from '../../assets/icons/hamburger.png';
 import SearchBarIcon from '../../assets/icons/loupe.png';
 import GiftBoxIcon from '../../assets/icons/present-box.png';
 import { useNavigate } from 'react-router';
+import MobileMenu from '../MobileMenu/MobileMenu';
+import { useState } from 'react';
 
 
 function Header() {
 
+
     const navigate = useNavigate();
 
-    const handleNavigation = () => {
+    const handleHomeNavigation = () => {
+        navigate('/')
+    };
+
+    const handleShopNavigation = () => {
       navigate('/shop');
     };
 
     const handleAboutNavigation = () => {
         navigate('/about');
-    }
+    };
+
+    const [MobileMenuOpen, setMobileMenuOpen] = useState(false);
+  
 
 
     return (
@@ -33,16 +43,20 @@ function Header() {
             </div>
             <div className="header__wrapper">
                 <div className="header__nav">
-                    <h2 className="header__nav-1" onClick={handleNavigation}>Shop</h2>
+                    <h2 className="header__nav-1" onClick={handleShopNavigation}>Shop</h2>
                     <h2 className="header__nav-2" onClick={handleAboutNavigation} >About</h2>
                 </div>
-                <img src={EmpowerShoppeLogo} className="header__logo" alt="EmpowerShoppe Logo" />
+                <img src={EmpowerShoppeLogo} className="header__logo" alt="EmpowerShoppe Logo" onClick={handleHomeNavigation} />
                 <div className="header__icon-wrapper" >
                     <img src={SignInIcon} className="header__sign-in" alt="Sign In Icon" />
                     <img src={AddToCartIcon} className="header__add-to-cart" alt="Add to Cart Icon" />
-                    <img src={HamburgerIcon} className="header__menu" alt=" Menu Icon" />
+                    <img src={HamburgerIcon} className="header__menu" alt=" Menu Icon" onClick={() => {setMobileMenuOpen(true)}} />
+                    {MobileMenuOpen && (
+                    <MobileMenu setMobileMenuOpen={setMobileMenuOpen} />
+                )}
                 </div>
             </div>
+           
             <div className="header__search">
                 <div className="header__search-wrapper" >
                     <input placeholder="Search for products.." className="header__search-input" />
@@ -51,7 +65,7 @@ function Header() {
             </div>
             <div className="header__content-wrapper">
                 <img src={GiftBoxIcon} className="header__gift-icon" alt="Gift Box Icon" />
-                <h2 className="header__content">Take Advantage of our Essential items with Quality pricing! <span onClick={handleNavigation} className="header__content--focus">Shop Now</span></h2>
+                <h2 className="header__content">Take Advantage of our Essential items with Quality pricing! <span onClick={handleShopNavigation} className="header__content--focus">Shop Now</span></h2>
             </div>
         </div>   
         </>
