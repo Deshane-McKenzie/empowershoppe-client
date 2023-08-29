@@ -6,6 +6,7 @@ import About from './components/About/About';
 import Contact from './components/Contact/Contact';
 import ShopPage from './pages/Shop/ShopPage';
 import ProductPage from './pages/Product/ProductPage';
+import Checkout from './components/Checkout/Checkout';
 import ReturnPolicy from './components/ReturnPolicy/ReturnPolicy';
 import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy';
 import Footer from './components/Footer/Footer';
@@ -22,6 +23,7 @@ function App() {
           <Route path="/shop" element={<ShopPage />} />
           <Route path="/product" element={<ProductPage />} />
           <Route path="/product/:product_id" element={<ProductPage />} />
+          <Route path="/checkout" element={<Checkout />} />
           <Route path="/return-policy" element={<ReturnPolicy />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Routes>
