@@ -1,15 +1,16 @@
 import './Footer.scss';
+import { useNavigate } from 'react-router-dom';  
 import EmpowerShoppeLogo from '../../assets/logo/empowershoppe-logo.png'
 import LinkedInIcon from '../../assets/icons/linkedin.png';
 import GitHubIcon from '../../assets/icons/github.png';
 import InstagramIcon from '../../assets/icons/instagram.png';
 import TwitterIcon from '../../assets/icons/twitter-sign.png';
 import FacebookIcon from '../../assets/icons/facebook.png';
-import { useNavigate } from 'react-router-dom';  
 
 
 function Footer() {
 
+  //Navigation Section Below:
   const navigate = useNavigate();
 
     const handleReturnNavigation = () => {

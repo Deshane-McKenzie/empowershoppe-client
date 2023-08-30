@@ -1,4 +1,6 @@
 import './Header.scss';
+import { useState } from 'react';
+import { useNavigate } from 'react-router';
 import FreeShippingIcon from '../../assets/icons/free-shipping.png';
 import EmpowerShoppeLogo from '../../assets/logo/empowershoppe-logo.png';
 import SignInIcon from '../../assets/icons/sign-in.png';
@@ -6,20 +8,28 @@ import AddToCartIcon from '../../assets/icons/add-to-basket.png';
 import HamburgerIcon from '../../assets/icons/hamburger.png';
 import SearchBarIcon from '../../assets/icons/loupe.png';
 import GiftBoxIcon from '../../assets/icons/present-box.png';
-import { useNavigate } from 'react-router';
+import MobileMenu from '../MobileMenu/MobileMenu';
 
 
 function Header() {
 
+    const [MobileMenuOpen, setMobileMenuOpen] = useState(false);
+  
+    const handleToggleMenu = () => {
+        setMobileMenuOpen(!MobileMenuOpen);
+      };
+
+
+    //Navigation section below:
     const navigate = useNavigate();
 
     const handleHomeNavigation = () => {
-        navigate('/')
+        navigate('/');
     }
 
     const handleShopNavigation = () => {
       navigate('/shop');
-    };
+    }
 
     const handleAboutNavigation = () => {
         navigate('/about');
@@ -44,9 +54,13 @@ function Header() {
                 <div className="header__icon-wrapper" >
                     <img src={SignInIcon} className="header__sign-in" alt="Sign In Icon" />
                     <img src={AddToCartIcon} className="header__add-to-cart" alt="Add to Cart Icon" />
-                    <img src={HamburgerIcon} className="header__menu" alt=" Menu Icon" />
+                    <img src={HamburgerIcon} className="header__menu" alt=" Menu Icon" onClick={() => {setMobileMenuOpen(true)}} />
+                    {MobileMenuOpen && (
+                    <MobileMenu setMobileMenuOpen={handleToggleMenu} />
+                )}
                 </div>
             </div>
+           
             <div className="header__search">
                 <div className="header__search-wrapper" >
                     <input placeholder="Search for products.." className="header__search-input" />
