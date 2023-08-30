@@ -1,4 +1,6 @@
 import './Header.scss';
+import { useState } from 'react';
+import { useNavigate } from 'react-router';
 import FreeShippingIcon from '../../assets/icons/free-shipping.png';
 import EmpowerShoppeLogo from '../../assets/logo/empowershoppe-logo.png';
 import SignInIcon from '../../assets/icons/sign-in.png';
@@ -6,30 +8,32 @@ import AddToCartIcon from '../../assets/icons/add-to-basket.png';
 import HamburgerIcon from '../../assets/icons/hamburger.png';
 import SearchBarIcon from '../../assets/icons/loupe.png';
 import GiftBoxIcon from '../../assets/icons/present-box.png';
-import { useNavigate } from 'react-router';
 import MobileMenu from '../MobileMenu/MobileMenu';
-import { useState } from 'react';
 
 
 function Header() {
 
+    const [MobileMenuOpen, setMobileMenuOpen] = useState(false);
+  
+    const handleToggleMenu = () => {
+        setMobileMenuOpen(!MobileMenuOpen);
+      };
 
+
+    //Navigation section below:
     const navigate = useNavigate();
 
     const handleHomeNavigation = () => {
-        navigate('/')
-    };
+        navigate('/');
+    }
 
     const handleShopNavigation = () => {
       navigate('/shop');
-    };
+    }
 
     const handleAboutNavigation = () => {
         navigate('/about');
-    };
-
-    const [MobileMenuOpen, setMobileMenuOpen] = useState(false);
-  
+    }
 
 
     return (
@@ -52,7 +56,7 @@ function Header() {
                     <img src={AddToCartIcon} className="header__add-to-cart" alt="Add to Cart Icon" />
                     <img src={HamburgerIcon} className="header__menu" alt=" Menu Icon" onClick={() => {setMobileMenuOpen(true)}} />
                     {MobileMenuOpen && (
-                    <MobileMenu setMobileMenuOpen={setMobileMenuOpen} />
+                    <MobileMenu setMobileMenuOpen={handleToggleMenu} />
                 )}
                 </div>
             </div>

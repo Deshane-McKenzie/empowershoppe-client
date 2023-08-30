@@ -1,7 +1,10 @@
 @use '../../styles/mixins' as *;
 @use '../../styles/variables' as *;
 
-
+/* 
+* The styling for the footer of the website that is universal 
+* accross all pages for mobile/tablet/desktop screen sizes
+*/
 
 .footer {
 
@@ -66,12 +69,12 @@
                     display: flex;
                     justify-content: space-between;
                     width: 100%;
-                    padding: 10px 134px 16px 54px;
+                    padding: 10px 64px 16px 64px;
                     border-bottom: 1px solid darkgrey;
                 }
 
                 @include desktop {
-                    padding: 10px 255px 16px 153px;
+                    padding: 10px 128px 16px 128px;
                 }
             }
     }
@@ -115,13 +118,13 @@
     &__copy-social-wrapper {
         @include tablet{
             display: flex;
-            justify-content: space-around;
-            padding: 5px 16px 16px;
+            justify-content: space-between;
+            padding: 5px 64px 16px;
             align-items: center;
         }
 
         @include desktop {
-            padding: 5px 64px 16px;
+            padding: 5px 128px 35px;
         }
         
     }
@@ -147,10 +150,12 @@
 
             @include tablet {
                 width: 50%;
+                justify-content: space-between;
+                padding: 16px 0 16px 107px;
             }
 
             @include desktop {
-                padding: 16px 0 16px 150px;
+                padding: 16px 0 16px 300px;
             }
 
                 &-linkedin {
