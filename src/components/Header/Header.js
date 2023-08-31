@@ -1,6 +1,8 @@
 import './Header.scss';
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 import FreeShippingIcon from '../../assets/icons/free-shipping.png';
 import EmpowerShoppeLogo from '../../assets/logo/empowershoppe-logo.png';
 import SignInIcon from '../../assets/icons/sign-in.png';
@@ -14,10 +16,35 @@ import MobileMenu from '../MobileMenu/MobileMenu';
 function Header() {
 
     const [MobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [input, setInput] = useState('');
+    const [results, setResults] = useState([]);
   
     const handleToggleMenu = () => {
         setMobileMenuOpen(!MobileMenuOpen);
       };
+
+      const getData = (value) => {
+        axios.get("http://localhost:8000/product")
+          .then((response) => {
+            const filteredResults = response.data.filter((product) => {
+              return value && product && product.title && product.title.toLowerCase().includes(value);
+            });
+            setResults(filteredResults);
+          })
+          .catch((error) => {
+            console.error("Error getting data:", error);
+          });
+      };
+
+    const handleChange = (value) => {
+        setInput(value);
+        getData(value);
+    }
+
+    const handleLinkClick = () => {
+        setInput('');
+        setResults([]);
+    }
 
 
     //Navigation section below:
@@ -60,12 +87,16 @@ function Header() {
                 )}
                 </div>
             </div>
-           
             <div className="header__search">
                 <div className="header__search-wrapper" >
-                    <input placeholder="Search for products.." className="header__search-input" />
+                    <input placeholder="Search for products.." className="header__search-input" value={input} onChange={(e) => {handleChange(e.target.value)}} />
                     <img src={SearchBarIcon} className="header__search-icon" alt="Search Bar Icon" />
-                </div>
+                </div>  
+            </div>
+            <div className="header__search-results">
+                    {results.map((result) => {
+                        return <Link to={`/product/${result.product_id}`} className="header__search-title" onClick={handleLinkClick}><div key={result.product_id}>{result.title}</div></Link>;
+                    })}
             </div>
             <div className="header__content-wrapper">
                 <img src={GiftBoxIcon} className="header__gift-icon" alt="Gift Box Icon" />
