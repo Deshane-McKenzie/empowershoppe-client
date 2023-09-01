@@ -18,6 +18,7 @@
         padding: 10px 0;
         font-weight: 700;
         color: darkred;
+        display: none; //Due to page not being complete yet- Didn't want link in production
     }
 
     &__sign-up {
@@ -36,6 +37,7 @@
                     justify-content: center;
                     flex-direction: column;
                     background-color: #ccbc8e;
+                    border-top: 1px solid darkgrey; // Because contact link isn't in production as yet - Will remove when complete
                 }
 
                 &-heading {

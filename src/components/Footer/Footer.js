@@ -1,5 +1,5 @@
 import './Footer.scss';
-import { useNavigate } from 'react-router-dom';  
+import { useNavigate } from 'react-router-dom'; 
 import EmpowerShoppeLogo from '../../assets/logo/empowershoppe-logo.png'
 import LinkedInIcon from '../../assets/icons/linkedin.png';
 import GitHubIcon from '../../assets/icons/github.png';
@@ -9,6 +9,7 @@ import FacebookIcon from '../../assets/icons/facebook.png';
 
 
 function Footer() {
+
 
   //Navigation Section Below:
   const navigate = useNavigate();
@@ -39,7 +40,7 @@ function Footer() {
         <div className="footer__sign-up-wrapper">
           <h2 className="footer__sign-up-heading">Discover Proven Successful Online Business Strategies!</h2>
           <h3 className="footer__sign-up-subheading">We won't share your information with any third parties and you can unsubscribe at any time.</h3>
-          <input placeholder="Email.." className="footer__sign-up" />
+          <input placeholder="Strategies Available Soon!" className="footer__sign-up"/>
         </div>
         <div className="footer__links-container">
           <img src={EmpowerShoppeLogo} className="footer__logo" alt="EmpowerShoppe Logo" onClick={handleLogoNavigation} />
