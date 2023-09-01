@@ -23,29 +23,31 @@ function Header() {
         setMobileMenuOpen(!MobileMenuOpen);
       };
 
-      const getData = (value) => {
-        axios.get("http://localhost:8000/product")
-          .then((response) => {
-            const filteredResults = response.data.filter((product) => {
-              return value && product && product.title && product.title.toLowerCase().includes(value);
-            });
-            setResults(filteredResults);
-          })
-          .catch((error) => {
-            console.error("Error getting data:", error);
-          });
-      };
+    //Calls for product information from backend and filters through for the name of the product and displays if letter is typed
+    const getData = (value) => {
+    axios.get("http://localhost:8000/product")
+        .then((response) => {
+        const filteredResults = response.data.filter((product) => {
+            return value && product && product.title && product.title.toLowerCase().includes(value);
+        });
+        setResults(filteredResults);
+        })
+        .catch((error) => {
+        console.error("Error getting data:", error);
+        });
+    };
 
+    //Changes state depending on the letter typed in the input section
     const handleChange = (value) => {
         setInput(value);
         getData(value);
     }
 
+    //Resets (closes) search bar after product from the list is clicked
     const handleLinkClick = () => {
         setInput('');
         setResults([]);
     }
-
 
     //Navigation section below:
     const navigate = useNavigate();

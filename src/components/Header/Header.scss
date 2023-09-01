@@ -120,6 +120,7 @@
     &__sign-in {
         width: 37px;
         padding-right: 16px;
+        display: none; // Due to sign in page not being complete - Shouldn't be in production until complete
 
             @include tablet {
                 width: 40px;
