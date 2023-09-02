@@ -31,6 +31,18 @@ function ProductPage() {
       .catch((err) => { console.error(err) })
   }, [product_id]);
 
+  // Function to refresh activeReviews
+  const refreshActiveReviews = () => {
+    axios
+      .get(`http://localhost:8000/product/${activeProduct.product_id}`)
+      .then((response) => {
+        setActiveReviews(response.data.reviews);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
+
 
     return (
       <>
@@ -43,11 +55,9 @@ function ProductPage() {
           </div>
           <div className="item__btn-wrapper">
             <button className="item__btn">Add to Bag</button>
-            <button className="item__btn-checkout">Add & Checkout</button>
           </div>
             <p className="item__description">{activeProduct.description}</p>
-            <h4 className="item__reviews">Reviews </h4>
-            <Reviews activeReviews={activeReviews} />
+            <Reviews activeReviews={activeReviews} productId={activeProduct.product_id} refreshActiveReviews={refreshActiveReviews} />
         </div>
         <ProductPageList productDetails={productDetails}  activeProduct={activeProduct} />
       </div>
