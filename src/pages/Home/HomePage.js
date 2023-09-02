@@ -1,5 +1,4 @@
 import './HomePage.scss';
-// import axios from 'axios';
 import ShowcaseDesignImage from '../../assets/images/ShowcaseDesign.jpg';
 import EasyCheckoutImage from '../../assets/images/EasyCheckout.jpg';
 
