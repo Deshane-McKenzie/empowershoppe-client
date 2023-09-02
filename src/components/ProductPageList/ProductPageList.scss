@@ -26,6 +26,12 @@
             font-size: 15px;
             padding-bottom: 30px;
             font-weight: 600;
+
+                @include tablet {
+                    padding-top: 37px;
+                    display: flex;
+                    justify-content: center;
+                }
         }
 
         &__list {
@@ -38,6 +44,7 @@
                     flex-wrap: wrap;
                     align-items: flex-start;
                     justify-content: center;
+                    margin-bottom: 12px;
                 }
         }
 

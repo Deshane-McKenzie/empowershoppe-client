@@ -2,49 +2,93 @@
 @use '../../styles/variables' as *;
 
 
+/*
+ * Styling for the image, image tite/price, add to bag, and desctiption parts
+ * of the Product page. Styling for mobile/tablet/desktop screen sizes
+*/
+
 .item {
     font-size: 18px;
     width: 150px;
     font-weight: 400;
 
-        &__image {
-            width: 100%;
+        @include desktop {
+            font-size: 20px;
         }
 
-        &__container {
-            padding: 0 16px;
-        }
+            &__image {
+                width: 100%;
 
-        &__headings {
-            display: flex;
-            justify-content: space-between;
-            padding: 12px 0;
-        }
+                    @include tablet {
+                        width: 50%;
+                        height: 100%;
+                    }
+            }
 
-        &__price {
-            font-size: 18px;
-            font-weight: 400;
-        }
+            &__container {
+                padding: 0 16px;
 
-        &__btn {
-            border: 3px solid #001fbd;
-            padding: 5px;
-            border-radius: 2px;
-            color: #001fbd;
-            margin-top: 5px;
-            font-size: 15.5px;
-            font-weight: 700;
-            cursor: pointer;
+                    @include tablet {
+                        border-left: 1px solid darkgray;
+                    }
 
-                &-wrapper {
-                    display: flex;
-                    flex-direction: column;
-                }
-        }
+                    @include desktop {
+                        padding: 0 48px;
+                    }
 
-        &__description {
-            padding: 40px 0;
-            font-size: 15px;
-            font-weight: 300;
-        }
+                        &-outer {
+                            @include tablet {
+                                display: flex;
+                            }
+                        }       
+            }
+
+            &__headings {
+                display: flex;
+                justify-content: space-between;
+                padding: 12px 0;
+
+                    @include tablet {
+                        padding: 52px 0 35px 0;
+                    }
+            }
+
+            &__price {
+                font-size: 18px;
+                font-weight: 400;
+
+                    @include desktop {
+                        font-size: 20px;
+                    }
+            }
+
+            &__btn {
+                border: 3px solid #001fbd;
+                padding: 5px;
+                border-radius: 2px;
+                color: #001fbd;
+                margin-top: 5px;
+                font-size: 15.5px;
+                font-weight: 700;
+                cursor: pointer;
+
+                    @include tablet {
+                        margin-bottom: 30px;
+                    }
+
+                        &-wrapper {
+                            display: flex;
+                            flex-direction: column;
+                        }
+            }
+
+            &__description {
+                padding: 40px 0;
+                font-size: 15px;
+                font-weight: 300;
+
+                    @include tablet {
+                        padding: 40px 0 70px 0;
+                    }
+            }
 }
