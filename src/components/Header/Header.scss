@@ -80,6 +80,11 @@
         &-1 {
             font-size: 20px;
 
+                @include tablet { // Active until About is in production to replicate design on opposite side
+                    padding: 0 16px 0 0;
+                    border-right: 2px solid #001fbd;
+                }
+
                 @include desktop {
                     font-size: 23px;
                     padding-right: 16px;
@@ -90,11 +95,13 @@
         &-2 {
             font-size: 20px;
             margin-right: 10px;
+            display: none; // To be removed when active and ready for production to prevent poor user experience
 
                 @include desktop {
                     font-size: 23px;
                     padding-left: 16px;
                     margin-right: -85px;
+                    display: none; // To be removed when active and ready for production to prevent poor user experience
                 }
         }
     }
@@ -120,7 +127,7 @@
     &__sign-in {
         width: 37px;
         padding-right: 16px;
-        display: none; // Due to sign in page not being complete - Shouldn't be in production until complete
+        display: none; // Due to sign in page not being ready for production - Shouldn't be in production until complete to prevent poor user experience
 
             @include tablet {
                 width: 40px;
