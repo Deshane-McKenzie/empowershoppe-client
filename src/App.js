@@ -9,6 +9,7 @@ import ProductPage from './pages/Product/ProductPage';
 import Checkout from './components/Checkout/Checkout';
 import ReturnPolicy from './components/ReturnPolicy/ReturnPolicy';
 import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy';
+import ThankYou from './components/ThankYou/ThankYou';
 import Footer from './components/Footer/Footer';
 
 
@@ -26,6 +27,7 @@ function App() {
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/return-policy" element={<ReturnPolicy />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/thankyou" element={<ThankYou />} />
         </Routes>
       <Footer />
     </BrowserRouter>

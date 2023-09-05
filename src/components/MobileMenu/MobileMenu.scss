@@ -33,7 +33,7 @@
 
         &__wrapper {
             border-top: 1px solid darkgrey;
-            border-bottom: 1px solid darkgray;
+            // border-bottom: 1px solid darkgray; // When About page is in production, to be used for styling
             padding: 10px 0 10px 16px;
 
                 &-2 {
@@ -43,5 +43,6 @@
 
         &__heading-2 {
             padding: 10px 0 10px 16px;
+            display: none; //Hidden due to page not being active to prevent broken links in production
         }
 }
