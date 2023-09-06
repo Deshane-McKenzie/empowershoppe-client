@@ -129,13 +129,15 @@ function Checkout() {
         cartItems.map((item, index) => (
           <div key={index} className="bag">
             <div className="bag__container">
+            <div className="bag__img-text">
             <div className="bag__item-container">
             <img src={item.product_image} className="item__image bag__item" alt="Product" />
             </div>
-              <div className="bag__details">
+            <div className="bag__details">
                 <p className="bag__title">{item.title}</p>
                 <p className="bag__price">${item.price}</p>
                 <p className="bag__quantity">x {item.quantity}</p>
+              </div>
               </div>
             <img src={CloseImage} className="bag__item-delete" onClick={() => removeFromCart(item.product_id)} />
             </div>

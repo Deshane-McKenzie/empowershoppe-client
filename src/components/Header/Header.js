@@ -57,11 +57,15 @@ function Header() {
     }
 
     const handleShopNavigation = () => {
-      navigate('/shop');
+      navigate('/product');
     }
 
     const handleAboutNavigation = () => {
         navigate('/about');
+    }
+
+    const handleCartNavigation = () => {
+        navigate('/checkout')
     }
 
 
@@ -82,7 +86,7 @@ function Header() {
                 <img src={EmpowerShoppeLogo} className="header__logo" alt="EmpowerShoppe Logo" onClick={handleHomeNavigation} />
                 <div className="header__icon-wrapper" >
                     <img src={SignInIcon} className="header__sign-in" alt="Sign In Icon" />
-                    <img src={AddToCartIcon} className="header__add-to-cart" alt="Add to Cart Icon" />
+                    <img src={AddToCartIcon} className="header__add-to-cart" alt="Add to Cart Icon" onClick={handleCartNavigation} />
                     <img src={HamburgerIcon} className="header__menu" alt=" Menu Icon" onClick={() => {setMobileMenuOpen(true)}} />
                     {MobileMenuOpen && (
                     <MobileMenu setMobileMenuOpen={handleToggleMenu} />
