@@ -114,9 +114,9 @@ function Reviews({ activeReviews, productId, refreshActiveReviews }) {
       <>
       <h4 className="review__header">Reviews</h4>
       {activeReviews.map((review) => (
-        <div className="review__container" key={review.review_id}>
-              <div className="review__container-inner">
-                  <div className="review__wrapper">  
+        <div key={review.review_id}>
+              <div>
+                  <div>  
                     <div className="review__names-date"> 
                       <h2 className="review__names">{review.first_name} {review.last_name}</h2>
                       <p className="review__date">{new Date(review.review_date).toISOString().split('T')[0]}</p>
