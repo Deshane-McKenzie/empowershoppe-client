@@ -1,0 +1,155 @@
+@use '../../styles/mixins' as *;
+@use '../../styles/variables' as *;
+
+
+
+.hero {
+    width: 100%;
+}
+
+
+.help {
+    color: #001fbd;
+    border-bottom: 1px solid #001fbd;
+
+        &__title {
+            display: flex;
+            justify-content: center;
+            font-size: 25px;
+            margin-bottom: 15px;
+
+                @include tablet {
+                    font-size: 30px;
+                }
+        }
+
+        &__container-showcase {
+            border-top: 1px solid darkgray;
+            border-bottom: 1px solid darkgray;
+
+                @include tablet {
+                    display: flex;
+                    align-items: center;
+                    border-bottom: initial;
+                    margin-bottom: 33px;
+                }
+
+                @include desktop {
+                    padding: 0 128px;
+                }
+        }
+
+        &__img {
+            width: 100%;
+
+                @include tablet {
+                    width: 35%;
+                    border-bottom: 1px solid darkgray;
+                    border-top: 1px solid darkgray;
+                    margin-top: 33px;
+                }
+
+                @include desktop {
+                    border-right: 1px solid darkgray;
+                    border-left: 1px solid darkgray;
+                }
+
+                    &--hidden {
+                        width: 100%;
+                        
+                            @include tablet {
+                                display: none;
+                            }
+                    }
+
+                    &-checkout {
+                        display: none;
+
+                            @include tablet {
+                                display: initial;
+                                width: 35%;
+                                border-top: 1px solid darkgray;
+                                border-bottom: 1px solid darkgray;
+                            }
+
+                            @include desktop {
+                                border-right: 1px solid darkgray;
+                                border-left: 1px solid darkgray;
+                            }
+                    }
+        }
+
+        &__showcase-wrapper {
+            padding: 7px 16px;
+
+                @include tablet {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+        }
+
+        &__heading {
+            font-size: 15px;
+            padding-bottom: 8px;
+            font-weight: 600;
+
+                @include desktop {
+                    font-size: 17px;
+                }
+    
+                    &-checkout {
+                        font-size: 15px;
+                        padding-bottom: 8px;
+                        font-weight: 600;
+
+                            @include desktop {
+                                font-size: 17px;
+                            }
+                    }
+        }
+
+        &__description {
+            width: 78%;
+            font-weight: 200;
+            font-size: 14px;
+
+                @include tablet {
+                    width: 85%;
+                }
+
+                    &-checkout {
+                        width: 78%;
+                        font-weight: 200;
+                        font-size: 14px;
+                        padding-bottom: 15px;
+
+                            @include tablet {
+                                padding-bottom: initial;
+                                width: 87%;
+                            }
+                    }
+        }
+
+        &__container-checkout {
+            @include tablet {
+                display: flex;
+                align-items: center;   
+                padding-bottom: 33px;
+            }
+
+            @include desktop {
+                padding: 0 128px 33px 128px;
+            }
+        }
+
+        &__checkout-wrapper {
+            padding: 7px 16px;
+
+                @include tablet {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+        }
+}
