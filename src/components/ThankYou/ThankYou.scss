@@ -1,9 +1,11 @@
 @use '../../styles/mixins' as *;
 @use '../../styles/variables' as *;
 
+
 /*
  * Basic styling for the thank you page once stripe payment is successful
  * For mobile/tablet/desktop screen sizes
+ * Mobile 320px / Tablet 768px / Desktop 1280 px
 */
 
 .thank-you {

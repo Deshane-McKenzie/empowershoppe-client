@@ -3,7 +3,10 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 
-// Functionality and design for both Reviews & Leave a Review sections
+/* 
+ * Functionality and design for both Reviews & Leave a Review sections
+ * Mobile 320px / Tablet 768px / Desktop 1280 px
+*/
 
 function Reviews({ activeReviews, productId, refreshActiveReviews }) {
 

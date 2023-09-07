@@ -1,6 +1,11 @@
 import './PrivacyPolicy.scss';
 
 
+/*
+ * Design for Privacy Policy page - Builds trust for customers
+ * Mobile 320px / Tablet 768px / Desktop 1280 px
+*/ 
+
 function PrivacyPolicy() {
     return (
       <>

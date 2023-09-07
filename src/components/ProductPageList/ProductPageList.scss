@@ -1,9 +1,11 @@
 @use '../../styles/mixins' as *;
 @use '../../styles/variables' as *;
 
+
 /*
  * Styling for the list of recommended items at the bottom of the Product page
  * for mobile/tablet/desktop screen sizes
+ * Mobile 320px / Tablet 768px / Desktop 1280 px
 */
 
 .product {

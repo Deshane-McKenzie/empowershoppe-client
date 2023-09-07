@@ -1,9 +1,11 @@
 @use '../../styles/mixins' as *;
 @use '../../styles/variables' as *;
 
+
 /* 
-* The styling for the header of the website that is universal 
-* accross all pages for mobile/tablet/desktop screen sizes
+ * The styling for the header of the website that is universal 
+ * accross all pages for mobile/tablet/desktop screen sizes
+ * Mobile 320px / Tablet 768px / Desktop 1280 px
 */
 
 .banner {
@@ -14,7 +16,7 @@
         &__container {
             padding: 0 16px; 
             border-bottom: 1px solid black;
-            background-color: #ccbc8e;
+            background-color: $secondary-color;
 
                 @include tablet {
                     padding: 0px 64px;
@@ -31,19 +33,18 @@
                 @include tablet {
                     font-size: 16px;
                 }
-
         }
 
         &__icon {
             width: 45px;
             margin-left: 5px;
             
-
                 @include tablet {
                     width: 48px;    
                 }
         } 
 }
+
 
 .header {
 
@@ -77,37 +78,40 @@
                 margin-top: 22px;
             }
         
-        &-1 {
-            font-size: 20px;
+                &-1 {
+                    font-size: 20px;
+                    cursor: pointer;
 
-                @include tablet { // Active until About is in production to replicate design on opposite side
-                    padding: 0 16px 0 0;
-                    border-right: 2px solid #001fbd;
+                        @include tablet { // Active until About is in production to replicate design on opposite side
+                            padding: 0 16px 0 0;
+                            border-right: 2px solid $primary-color;
+                        }
+
+                        @include desktop {
+                            font-size: 23px;
+                            padding-right: 16px;
+                            border-right: 2px solid $primary-color;
+                        }
                 }
 
-                @include desktop {
-                    font-size: 23px;
-                    padding-right: 16px;
-                    border-right: 2px solid #001fbd;
-                }
-        }
-
-        &-2 {
-            font-size: 20px;
-            margin-right: 10px;
-            display: none; // To be removed when active and ready for production to prevent poor user experience
-
-                @include desktop {
-                    font-size: 23px;
-                    padding-left: 16px;
-                    margin-right: -85px;
+                &-2 {
+                    font-size: 20px;
+                    margin-right: 10px;
                     display: none; // To be removed when active and ready for production to prevent poor user experience
+                    cursor: pointer;
+
+                        @include desktop {
+                            font-size: 23px;
+                            padding-left: 16px;
+                            margin-right: -85px;
+                            display: none; // To be removed when active and ready for production to prevent poor user experience
+                        }
                 }
-        }
     }
 
     &__logo {
         width: 115px;
+        cursor: pointer;
 
             @include tablet {
                 width: 215px;
@@ -128,6 +132,7 @@
         width: 37px;
         padding-right: 16px;
         display: none; // Due to sign in page not being ready for production - Shouldn't be in production until complete to prevent poor user experience
+        cursor: pointer;
 
             @include tablet {
                 width: 40px;
@@ -140,8 +145,9 @@
 
     &__add-to-cart {
         width: 55px;
-        border-left: 2px solid #001fbd;
+        border-left: 2px solid $primary-color;
         padding: 0 16px;
+        cursor: pointer;
 
             @include tablet {
                 width: 44px;
@@ -155,8 +161,9 @@
 
     &__menu {
         width: 40px;
-        border-left: 2px solid #001fbd;
+        border-left: 2px solid $primary-color;
         padding-left: 16px;
+        cursor: pointer;
 
             @include tablet {
                 display: none;
@@ -168,10 +175,9 @@
         height: 67px;
         margin: 12px 0;
         
-
             &-wrapper {
                 width: 100%;
-                border: 6px solid darkgrey;
+                border: 6px solid $border-color;
                 height: 67px;
                 display: flex;
                 justify-content: center;
@@ -198,14 +204,15 @@
                 width: 100%;
                 display: flex;
                 flex-direction: column; 
-                border-bottom: 5px solid darkgray;
+                border-bottom: 5px solid $border-color;
                 margin-top: -17px;
                 max-height: 270px;
                 overflow-y: scroll;
-                &:hover {
-                    background-color: rgb(225, 225, 225);
-                    z-index: 9999;
-                }
+
+                    &:hover {
+                        background-color: rgb(225, 225, 225);
+                        z-index: 9999;
+                    }
             }
 
             &-title {
@@ -214,18 +221,17 @@
                 z-index: 9999;
                 font-size: 16px;
                 padding: 11px;
-                border-left: 6px solid darkgray;
-                border-right: 6px solid darkgray;
+                border-left: 6px solid $border-color;
+                border-right: 6px solid $border-color;
 
                     @include tablet {
                         display: flex;
                         justify-content: center;
                     }
-                
-                         
-                    &:hover {
-                        background-color: rgb(225, 225, 225);
-                    }           
+                           
+                        &:hover {
+                            background-color: rgb(225, 225, 225);
+                        }           
             }                             
     }
 
@@ -242,7 +248,7 @@
 
                 &-wrapper {
                     padding: 10px 16px 13px;
-                    border-bottom: 1px solid darkgrey;
+                    border-bottom: 1px solid $border-color;
 
                         @include tablet {
                             padding: 10px 64px 13px;
@@ -253,7 +259,8 @@
                 }
 
                 &--focus {
-                    color: darkred;
+                    color: $cta-color;
+                    cursor: pointer;
                 }
     } 
 

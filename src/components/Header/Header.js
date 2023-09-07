@@ -13,6 +13,11 @@ import GiftBoxIcon from '../../assets/icons/present-box.png';
 import MobileMenu from '../MobileMenu/MobileMenu';
 
 
+/*
+ * Design and Functionality for Header section across all pages
+ * Mobile 320px / Tablet 768px / Desktop 1280 px
+*/ 
+
 function Header() {
 
     const [MobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -37,36 +42,36 @@ function Header() {
         });
     };
 
-    //Changes state depending on the letter typed in the input section
-    const handleChange = (value) => {
-        setInput(value);
-        getData(value);
-    }
+            //Changes state depending on the letter typed in the input section
+            const handleChange = (value) => {
+                setInput(value);
+                getData(value);
+            }
 
-    //Resets (closes) search bar after product from the list is clicked
-    const handleLinkClick = () => {
-        setInput('');
-        setResults([]);
-    }
+            //Resets (closes) search bar after product from the list is clicked
+            const handleLinkClick = () => {
+                setInput('');
+                setResults([]);
+            }
 
-    //Navigation section below:
-    const navigate = useNavigate();
+                        //Navigation section below:
+                        const navigate = useNavigate();
 
-    const handleHomeNavigation = () => {
-        navigate('/');
-    }
+                        const handleHomeNavigation = () => {
+                            navigate('/');
+                        }
 
-    const handleShopNavigation = () => {
-      navigate('/product');
-    }
+                        const handleShopNavigation = () => {
+                        navigate('/product');
+                        }
 
-    const handleAboutNavigation = () => {
-        navigate('/about');
-    }
+                        const handleAboutNavigation = () => {
+                            navigate('/about');
+                        }
 
-    const handleCartNavigation = () => {
-        navigate('/checkout')
-    }
+                        const handleCartNavigation = () => {
+                            navigate('/checkout')
+                        }
 
 
     return (

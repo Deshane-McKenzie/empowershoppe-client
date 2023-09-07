@@ -5,11 +5,12 @@
 /*
  * Styling for Checkout Page
  * For mobile/tablet/desktop screen sizes
+ * Mobile 320px / Tablet 768px / Desktop 1280 px
 */
 
 .bag {
-    border-top: 1px solid darkgray;
-    border-bottom: 1px solid darkgray;
+    border-top: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
     padding: 20px 16px;
 
         @include tablet {
@@ -52,7 +53,7 @@
                         width: 96px;
                         border: 1px solid black;
                         border-radius: 2px;
-                        height: 65px;
+                        height: 64px;
                         overflow: hidden;
 
                             @include tablet {
@@ -62,11 +63,12 @@
                     }
 
                     &-delete {
-                        color: darkred;
+                        color: $cta-color;
                         width: 10px;
                         display: flex;
                         justify-content: flex-start;
                         height: 10px;
+                        cursor: pointer;
                     }
 
                     &-none {
@@ -101,18 +103,18 @@
 
 
 .info {
-    background-color: lightgray;
+    background-color: $form-color;
     max-width: 100%;
 
         &__heading {
             display: flex;
             justify-content: center;
             padding: 30px 0 15px 0;
-            background-color: lightgray;
+            background-color: $form-color;
         }
 
         &__background {
-            background-color: lightgray;
+            background-color: $form-color;
             max-width: 100%;
         }
 
@@ -140,6 +142,7 @@
 
         &__checkbox {
             margin-right: 5px;
+            cursor: pointer;
 
                 &-wrapper {
                     margin: 10px 16px 0 16px;
@@ -156,11 +159,12 @@
         }
 
         &__btn {
-            border: 2px solid #001fbd;
-            color: #001fbd;
+            border: 2px solid $primary-color;
+            color: $primary-color;
             margin: 25px;
             padding: 5px 25px;
             font-weight: 700;
+            cursor: pointer;
 
                 @include tablet {
                     padding: 7px 40px;
@@ -170,7 +174,7 @@
                     &-wrapper {
                         display: flex;
                         justify-content: center;
-                        background-color: lightgray;
+                        background-color: $form-color;
                     }
         }
 }

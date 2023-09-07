@@ -7,6 +7,11 @@ import Reviews from '../../components/Reviews/Reviews';
 import ProductPageList from '../../components/ProductPageList/ProductPageList';
 
 
+/*
+ * Design & Functionality for Product Page
+ * Mobile 320px / Tablet 768px / Desktop 1280 px
+*/ 
+
 function ProductPage() {
 
   const [productDetails, setProductDetails] = useState([]);
@@ -36,52 +41,52 @@ function ProductPage() {
       .catch((err) => { console.error(err) })
   }, [product_id]);
 
-  // Function to refresh activeReviews
-  const refreshActiveReviews = () => {
-    axios
-      .get(`http://localhost:8000/product/${activeProduct.product_id}`)
-      .then((response) => {
-        setActiveReviews(response.data.reviews);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  };
+        // Function to refresh activeReviews
+        const refreshActiveReviews = () => {
+          axios
+            .get(`http://localhost:8000/product/${activeProduct.product_id}`)
+            .then((response) => {
+              setActiveReviews(response.data.reviews);
+            })
+            .catch((err) => {
+              console.error(err);
+            });
+        };
 
 
-  useEffect(() => {
-    const storedCart = JSON.parse(localStorage.getItem('cart'));
-    if (storedCart) {
-      setCart(storedCart);
-    }
-  }, []);
+              useEffect(() => {
+                const storedCart = JSON.parse(localStorage.getItem('cart'));
+                if (storedCart) {
+                  setCart(storedCart);
+                }
+              }, []);
 
-  const updateCart = (updatedCart) => {
-    setCart(updatedCart);
-    localStorage.setItem('cart', JSON.stringify(updatedCart));
-  };
+              const updateCart = (updatedCart) => {
+                setCart(updatedCart);
+                localStorage.setItem('cart', JSON.stringify(updatedCart));
+              };
 
-  const addToCart = (item) => {
-    const existingCartItem = cart.find((cartItem) => cartItem.product_id === item.product_id);
-    if (existingCartItem) {
-      const updatedCart = cart.map((cartItem) =>
-        cartItem.product_id === item.product_id
-          ? { ...cartItem, quantity: cartItem.quantity + 1 }
-          : cartItem
-      );
-      updateCart(updatedCart);
-    } else {
-      const updatedCart = [...cart, { ...item, quantity: 1 }];
-      updateCart(updatedCart);
-    }
-    handleCheckout();
-  };
+              const addToCart = (item) => {
+                const existingCartItem = cart.find((cartItem) => cartItem.product_id === item.product_id);
+                if (existingCartItem) {
+                  const updatedCart = cart.map((cartItem) =>
+                    cartItem.product_id === item.product_id
+                      ? { ...cartItem, quantity: cartItem.quantity + 1 }
+                      : cartItem
+                  );
+                  updateCart(updatedCart);
+                } else {
+                  const updatedCart = [...cart, { ...item, quantity: 1 }];
+                  updateCart(updatedCart);
+                }
+                handleCheckout();
+              };
 
-  const handleCheckout = () => {
-    // Redirect to the checkout page and pass the cart state
-   console.log("cart",updatedCart);
-    navigate('/checkout', { state: { cart: updatedCart } });
-  };
+                    const handleCheckout = () => {
+                      // Redirect to the checkout page and pass the cart state
+                    console.log("cart",updatedCart);
+                      navigate('/checkout', { state: { cart: updatedCart } });
+                    };
 
 
     return (

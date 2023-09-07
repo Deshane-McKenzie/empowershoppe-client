@@ -7,6 +7,7 @@ import CloseImage from '../../assets/icons/close.png';
 
 /*
  * Checkout Page design and functionality
+ * Mobile 320px / Tablet 768px / Desktop 1280 px
 */
 
 function Checkout() {
@@ -46,79 +47,79 @@ function Checkout() {
       }
     }, []);
   
-    const removeFromCart = (productId) => {
-      const updatedCart = cartItems.filter((product) => product.product_id !== productId);
-      setCartItems(updatedCart);
-      localStorage.setItem('cart', JSON.stringify(updatedCart));
-    };
+          const removeFromCart = (productId) => {
+            const updatedCart = cartItems.filter((product) => product.product_id !== productId);
+            setCartItems(updatedCart);
+            localStorage.setItem('cart', JSON.stringify(updatedCart));
+          };
 
-  const handleSameAsShippingChange = () => {
-    setSameAsShipping(!sameAsShipping);
-  };
+          const handleSameAsShippingChange = () => {
+            setSameAsShipping(!sameAsShipping);
+          };
 
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+                const handleSubmit = (e) => {
+                  e.preventDefault();
+                
+                  // Prepares the data to send to the database
+                  const formData = {
+                    shipping: {
+                      firstName: shippingFirstName,
+                      lastName: shippingLastName,
+                      email: shippingEmail,
+                      street: shippingStreet,
+                      suite: shippingSuite,
+                      city: shippingCity,
+                      province: shippingProvince,
+                      country: shippingCountry,
+                      postalcode: shippingPostalCode,
+                      phonenumber: shippingPhoneNumber,
+                    },
+                    billing: sameAsShipping
+                      ? {
+                          firstName: shippingFirstName,
+                          lastName: shippingLastName,
+                          email: shippingEmail,
+                          street: shippingStreet,
+                          suite: shippingSuite,
+                          city: shippingCity,
+                          province: shippingProvince,
+                          country: shippingCountry,
+                          postalcode: shippingPostalCode,
+                          phonenumber: shippingPhoneNumber,
+                        }
+                      : {
+                          firstName: billingFirstName,
+                          lastName: billingLastName,
+                          email: billingEmail,
+                          street: billingStreet,
+                          suite: billingSuite,
+                          city: billingCity,
+                          province: billingProvince,
+                          country: billingCountry,
+                          postalcode: billingPostalCode,
+                          phonenumber: billingPhoneNumber,
+                        },
+                    cart: { cartItems },
+                  };
   
-    // Prepares the data to send to the database
-    const formData = {
-      shipping: {
-        firstName: shippingFirstName,
-        lastName: shippingLastName,
-        email: shippingEmail,
-        street: shippingStreet,
-        suite: shippingSuite,
-        city: shippingCity,
-        province: shippingProvince,
-        country: shippingCountry,
-        postalcode: shippingPostalCode,
-        phonenumber: shippingPhoneNumber,
-      },
-      billing: sameAsShipping
-        ? {
-            firstName: shippingFirstName,
-            lastName: shippingLastName,
-            email: shippingEmail,
-            street: shippingStreet,
-            suite: shippingSuite,
-            city: shippingCity,
-            province: shippingProvince,
-            country: shippingCountry,
-            postalcode: shippingPostalCode,
-            phonenumber: shippingPhoneNumber,
-          }
-        : {
-            firstName: billingFirstName,
-            lastName: billingLastName,
-            email: billingEmail,
-            street: billingStreet,
-            suite: billingSuite,
-            city: billingCity,
-            province: billingProvince,
-            country: billingCountry,
-            postalcode: billingPostalCode,
-            phonenumber: billingPhoneNumber,
-          },
-      cart: { cartItems },
-    };
-  
-    // Sends the data to the database
-    axios
-      .post('http://localhost:8000/api/payment', formData, {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-      .then((response) => {
-        console.log('Response from API:', response.data);
-        if (response.data.checkoutURI) {
-          window.location.href = response.data.checkoutURI;
-        }
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
-  };
+                          // Sends the data to the database
+                          axios
+                            .post('http://localhost:8000/api/payment', formData, {
+                              headers: {
+                                'Content-Type': 'application/json',
+                              },
+                            })
+                            .then((response) => {
+                              console.log('Response from API:', response.data);
+                              if (response.data.checkoutURI) {
+                                window.location.href = response.data.checkoutURI;
+                              }
+                            })
+                            .catch((error) => {
+                              console.error('Error:', error);
+                            });
+                        };
 
 
   return (
@@ -129,17 +130,17 @@ function Checkout() {
         cartItems.map((item, index) => (
           <div key={index} className="bag">
             <div className="bag__container">
-            <div className="bag__img-text">
-            <div className="bag__item-container">
-            <img src={item.product_image} className="item__image bag__item" alt="Product" />
-            </div>
-            <div className="bag__details">
-                <p className="bag__title">{item.title}</p>
-                <p className="bag__price">${item.price}</p>
-                <p className="bag__quantity">x {item.quantity}</p>
+              <div className="bag__img-text">
+                <div className="bag__item-container">
+                  <img src={item.product_image} className="item__image bag__item" alt="Product" />
+                </div>
+                <div className="bag__details">
+                  <p className="bag__title">{item.title}</p>
+                  <p className="bag__price">${item.price}</p>
+                  <p className="bag__quantity">x {item.quantity}</p>
+                </div>
               </div>
-              </div>
-            <img src={CloseImage} className="bag__item-delete" onClick={() => removeFromCart(item.product_id)} />
+                <img src={CloseImage} className="bag__item-delete" onClick={() => removeFromCart(item.product_id)} />
             </div>
           </div>
         ))
@@ -392,7 +393,7 @@ function Checkout() {
           </div>
           )}
           <div className="info__btn-wrapper">
-          <button className="info__btn" type="submit">Checkout</button>
+            <button className="info__btn" type="submit">Checkout</button>
           </div>
         </form>
   </div>

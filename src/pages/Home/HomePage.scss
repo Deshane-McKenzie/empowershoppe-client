@@ -2,6 +2,11 @@
 @use '../../styles/variables' as *;
 
 
+/*
+ * Styling for the Home page compatible with mobile/tablet/desktop screen sizes
+ * Mobile 320px / Tablet 768px / Desktop 1280 px
+*/
+
 .hero {
     position: relative;
     width: 100%;
@@ -65,12 +70,13 @@
         &__btn {
             position: absolute;
             top: 62%;
-            background-color: #001fbd;
+            background-color: $primary-color;
             color: #f9f9ff;
-            border: 1px solid #001fbd;
+            border: 1px solid $primary-color;
             border-radius: 2px;
             padding: 5px 15px;
             width: 32%;
+            cursor: pointer;
 
                 @include tablet {
                     top: 61%;
@@ -86,23 +92,31 @@
 
 
 .help {
-    color: #001fbd;
-    border-bottom: 1px solid #001fbd;
+    color: $primary-color;
+    border-bottom: 1px solid $primary-color;
 
         &__title {
             display: flex;
             justify-content: center;
-            font-size: 25px;
-            margin-bottom: 15px;
+            font-size: 19px;
+            margin-bottom: 12px;
+            margin-top: 8px;
 
                 @include tablet {
                     font-size: 30px;
+                    margin-top: 12px;
+                    margin-bottom: 15px;
+                }
+
+                @include desktop {
+                    font-size: 35px;
+                    margin: 20px 0;
                 }
         }
 
         &__container-showcase {
-            border-top: 1px solid darkgray;
-            border-bottom: 1px solid darkgray;
+            border-top: 1px solid $border-color;
+            border-bottom: 1px solid $border-color;
 
                 @include tablet {
                     display: flex;
@@ -121,14 +135,14 @@
 
                 @include tablet {
                     width: 35%;
-                    border-bottom: 1px solid darkgray;
-                    border-top: 1px solid darkgray;
+                    border-bottom: 1px solid $border-color;
+                    border-top: 1px solid $border-color;
                     margin-top: 33px;
                 }
 
                 @include desktop {
-                    border-right: 1px solid darkgray;
-                    border-left: 1px solid darkgray;
+                    border-right: 1px solid $border-color;
+                    border-left: 1px solid $border-color;
                 }
 
                     &--hidden {
@@ -145,13 +159,13 @@
                             @include tablet {
                                 display: initial;
                                 width: 35%;
-                                border-top: 1px solid darkgray;
-                                border-bottom: 1px solid darkgray;
+                                border-top: 1px solid $border-color;
+                                border-bottom: 1px solid $border-color;
                             }
 
                             @include desktop {
-                                border-right: 1px solid darkgray;
-                                border-left: 1px solid darkgray;
+                                border-right: 1px solid $border-color;
+                                border-left: 1px solid $border-color;
                             }
                     }
         }

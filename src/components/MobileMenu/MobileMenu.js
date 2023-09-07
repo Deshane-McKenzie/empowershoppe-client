@@ -7,6 +7,7 @@ import EmpowerShoppeLogo from '../../assets/logo/empowershoppe-logo.png';
 /*
  * Modal for the menu tab on Mobile screen size only
  * (child component of the header component)
+ * Mobile 320px / Tablet 768px / Desktop 1280 px
 */
 
 function MobileMenu({setMobileMenuOpen}) {

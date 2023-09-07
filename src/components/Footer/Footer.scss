@@ -1,9 +1,11 @@
 @use '../../styles/mixins' as *;
 @use '../../styles/variables' as *;
 
+
 /* 
-* The styling for the footer of the website that is universal 
-* accross all pages for mobile/tablet/desktop screen sizes
+ * The styling for the footer of the website that is universal 
+ * accross all pages for mobile/tablet/desktop screen sizes
+ * Mobile 320px / Tablet 768px / Desktop 1280 px
 */
 
 .footer {
@@ -11,13 +13,13 @@
     &__heading {
         display: flex;
         justify-content: center;
-        border-top: 1px solid darkgrey;
-        border-bottom: 1px solid darkgrey;
+        border-top: 1px solid $border-color;
+        border-bottom: 1px solid $border-color;
         margin-top: 20px;
         font-size: 18px;
         padding: 10px 0;
         font-weight: 700;
-        color: darkred;
+        color: $cta-color;
         display: none; //Due to page not being complete yet- Didn't want link in production
     }
 
@@ -32,18 +34,18 @@
             }
 
                 &-wrapper {
-                    border-bottom: 1px solid darkgrey;
+                    border-bottom: 1px solid $border-color;
                     display: flex;
                     justify-content: center;
                     flex-direction: column;
-                    background-color: #ccbc8e;
-                    border-top: 1px solid darkgrey; // Because contact link isn't in production as yet - Will remove when complete
+                    background-color: $secondary-color;
+                    border-top: 1px solid $border-color; // Because contact link isn't in production as yet - Will remove when complete
                 }
 
                 &-heading {
                     font-size: 14px;
                     text-align: center;
-                    background-color: #ccbc8e;
+                    background-color: $secondary-color;
                     color: black;
                     padding: 20px 20px 10px 20px;
                 }
@@ -53,7 +55,7 @@
                     font-size: 12px;
                     padding: 0 45px 12px;
                     text-align: center;
-                    background-color: #ccbc8e;
+                    background-color: $secondary-color;
                     color: black;
                 }
     }
@@ -65,14 +67,13 @@
             padding-top: 30px;
         }
       
-
             &-container {
                 @include tablet {
                     display: flex;
                     justify-content: space-between;
                     width: 100%;
                     padding: 10px 64px 16px 64px;
-                    border-bottom: 1px solid darkgrey;
+                    border-bottom: 1px solid $border-color;
                 }
 
                 @include desktop {
@@ -95,8 +96,9 @@
         font-weight: 400;
         display: flex;
         justify-content: center;
-        color: darkred;
+        color: $cta-color;
         padding: 25px 0 15px 0;
+        cursor: pointer;
 
             @include tablet {
                 padding: 15px 0
@@ -108,8 +110,9 @@
         font-weight: 400;
         display: flex;
         justify-content: center;
-        color: darkred;
+        color: $cta-color;
         margin-bottom: 30px;
+        cursor: pointer;
 
             @include tablet {
                 margin-bottom: initial;
@@ -127,8 +130,7 @@
 
         @include desktop {
             padding: 5px 128px 35px;
-        }
-        
+        }   
     }
 
     &__copyright {
@@ -137,7 +139,7 @@
         display: flex;
         justify-content: center;
         margin: 15px 0 10px 0;
-        color: #001fbd;
+        color: $primary-color;
 
             @include tablet {
                 font-size: 13px;

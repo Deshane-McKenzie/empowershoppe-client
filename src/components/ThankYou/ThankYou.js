@@ -7,6 +7,7 @@ import { useLocation } from 'react-router-dom';
 
 /*
  * Thank you page that includes Order ID once stripe payment is successful 
+ * Mobile 320px / Tablet 768px / Desktop 1280 px
 */
 
 function ThankYou() {
@@ -39,7 +40,7 @@ function ThankYou() {
   return (
     <>
       <div>
-      <ToastContainer />
+        <ToastContainer />
         <p className="thank-you">Thank you for your Order!<br />
         It will be delivered shortly.<br />
         Your Order ID is: EMPSHOPPE00-{orderId}</p>
