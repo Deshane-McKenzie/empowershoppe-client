@@ -1,0 +1,185 @@
+@use '../../styles/mixins' as *;
+@use '../../styles/variables' as *;
+
+
+/* 
+ * The styling for the footer of the website that is universal 
+ * accross all pages for mobile/tablet/desktop screen sizes
+ * Mobile 320px / Tablet 768px / Desktop 1280 px
+*/
+
+.footer {
+
+    &__heading {
+        display: flex;
+        justify-content: center;
+        border-top: 1px solid $border-color;
+        border-bottom: 1px solid $border-color;
+        margin-top: 20px;
+        font-size: 18px;
+        padding: 10px 0;
+        font-weight: 700;
+        color: $cta-color;
+        display: none; //Due to page not being complete yet- Didn't want link in production
+    }
+
+    &__sign-up {
+        margin: 0 60px 20px 60px;
+        text-align: center;
+        padding: 5px 0;
+        border: 1px solid black;
+
+            @include desktop {
+                margin: 0 350px 20px 350px;
+            }
+
+                &-wrapper {
+                    border-bottom: 1px solid $border-color;
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                    background-color: $secondary-color;
+                    border-top: 1px solid $border-color; // Because contact link isn't in production as yet - Will remove when complete
+                }
+
+                &-heading {
+                    font-size: 14px;
+                    text-align: center;
+                    background-color: $secondary-color;
+                    color: black;
+                    padding: 20px 20px 10px 20px;
+                }
+
+                &-subheading {
+                    font-weight: 100;
+                    font-size: 12px;
+                    padding: 0 45px 12px;
+                    text-align: center;
+                    background-color: $secondary-color;
+                    color: black;
+                }
+    }
+
+    &__links {
+        @include tablet{
+            display: flex;
+            align-items: center;
+            padding-top: 30px;
+        }
+      
+            &-container {
+                @include tablet {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+                    padding: 10px 64px 16px 64px;
+                    border-bottom: 1px solid $border-color;
+                }
+
+                @include desktop {
+                    padding: 10px 128px 16px 128px;
+                }
+            }
+    }
+
+    &__logo {
+        display: none;
+
+            @include tablet {
+                display: initial;
+                width: 215px;
+            }
+    }
+
+    &__return {
+        font-size: 15px;
+        font-weight: 400;
+        display: flex;
+        justify-content: center;
+        color: $cta-color;
+        padding: 25px 0 15px 0;
+        cursor: pointer;
+
+            @include tablet {
+                padding: 15px 0
+            }
+    }
+
+    &__privacy {
+        font-size: 15px;
+        font-weight: 400;
+        display: flex;
+        justify-content: center;
+        color: $cta-color;
+        margin-bottom: 30px;
+        cursor: pointer;
+
+            @include tablet {
+                margin-bottom: initial;
+                padding-left: 25px;
+            }
+    }
+
+    &__copy-social-wrapper {
+        @include tablet{
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 64px 16px;
+            align-items: center;
+        }
+
+        @include desktop {
+            padding: 5px 128px 35px;
+        }   
+    }
+
+    &__copyright {
+        font-size: 12px;
+        font-weight: 400;
+        display: flex;
+        justify-content: center;
+        margin: 15px 0 10px 0;
+        color: $primary-color;
+
+            @include tablet {
+                font-size: 13px;
+            }
+    }
+
+    &__social {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        padding: 16px;
+
+            @include tablet {
+                width: 50%;
+                justify-content: space-between;
+                padding: 16px 0 16px 107px;
+            }
+
+            @include desktop {
+                padding: 16px 0 16px 300px;
+            }
+
+                &-linkedin {
+                    width: 25px;
+                }
+
+                &-github {
+                    width: 25px;
+                }
+
+                &-insta {
+                    width: 25px;
+                }
+
+                &-twitter {
+                    width: 25px;
+                }
+
+                &-facebook {
+                    width: 25px;
+                }
+    }
+}

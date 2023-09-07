@@ -1,0 +1,180 @@
+@use '../../styles/mixins' as *;
+@use '../../styles/variables' as *;
+
+
+/*
+ * Styling for Checkout Page
+ * For mobile/tablet/desktop screen sizes
+ * Mobile 320px / Tablet 768px / Desktop 1280 px
+*/
+
+.bag {
+    border-top: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+    padding: 20px 16px;
+
+        @include tablet {
+            padding: 20px 184px;
+        }
+
+        @include desktop {
+            padding: 20px 440px;
+        }
+
+            &__heading {
+                display: flex;
+                justify-content: center;
+                padding: 15px 0;
+            }
+
+            &__container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                    @include tablet {
+                        justify-content: space-between;
+                    }
+            }
+
+            &__img-text {
+                display: flex;
+                flex-direction: column;
+
+                    @include tablet {
+                        flex-direction: initial;
+                    }
+            }
+
+            &__item {
+                width: 100%;
+                
+                    &-container {
+                        width: 96px;
+                        border: 1px solid black;
+                        border-radius: 2px;
+                        height: 64px;
+                        overflow: hidden;
+
+                            @include tablet {
+                                width: 115px;
+                                height: 75px;
+                            }
+                    }
+
+                    &-delete {
+                        color: $cta-color;
+                        width: 10px;
+                        display: flex;
+                        justify-content: flex-start;
+                        height: 10px;
+                        cursor: pointer;
+                    }
+
+                    &-none {
+                        display: flex;
+                        justify-content: center;
+                        font-size: 14px;
+                        padding-bottom: 15px;
+                    }
+            }
+
+            &__details {
+                padding-top: 10px;
+
+                    @include tablet {
+                        padding: 0 15px;
+                    }
+            }
+
+            &__title {
+                font-size: 14px;
+            }
+
+            &__price {
+                padding: 10px 0;
+                font-size: 14px;
+            }
+
+            &__quantity {
+                font-size: 14px;
+            }
+}
+
+
+.info {
+    background-color: $form-color;
+    max-width: 100%;
+
+        &__heading {
+            display: flex;
+            justify-content: center;
+            padding: 30px 0 15px 0;
+            background-color: $form-color;
+        }
+
+        &__background {
+            background-color: $form-color;
+            max-width: 100%;
+        }
+
+        &__field {
+            border: 1px solid gray;
+            border-radius: 2px;
+            width: 100%;
+            margin: 5px 16px;
+            padding: 8px;
+
+                @include tablet {
+                    margin: 5px 64px;
+                }
+
+                @include desktop {
+                    margin: 5px 400px;
+                }
+
+                    &-wrapper {
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                    }
+        }
+
+        &__checkbox {
+            margin-right: 5px;
+            cursor: pointer;
+
+                &-wrapper {
+                    margin: 10px 16px 0 16px;
+                    font-size: 14px;
+
+                        @include tablet {
+                            margin: 10px 64px 0 64px;
+                        }
+
+                        @include desktop {
+                            margin: 10px 400px 0 400px;
+                        }
+                }
+        }
+
+        &__btn {
+            border: 2px solid $primary-color;
+            color: $primary-color;
+            margin: 25px;
+            padding: 5px 25px;
+            font-weight: 700;
+            cursor: pointer;
+
+                @include tablet {
+                    padding: 7px 40px;
+                    font-size: 15px;
+                }
+            
+                    &-wrapper {
+                        display: flex;
+                        justify-content: center;
+                        background-color: $form-color;
+                    }
+        }
+}

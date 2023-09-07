@@ -1,7 +1,14 @@
+@use '../src/styles/fonts' as *;
 
-
+/*
+ * Global styling for all pages on website
+ * Mobile 320px / Tablet 768px / Desktop 1280 px
+*/
 
 * {
     box-sizing: border-box;
     margin: 0;
+    font-family: 'Public Sans';
+    background-color: #f9f9ff;
   }
+

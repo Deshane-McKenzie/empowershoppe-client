@@ -1,0 +1,68 @@
+@use '../../styles/mixins' as *;
+@use '../../styles/variables' as *;
+
+
+/* 
+ * The styling for the privacy policy page of the website that is universal 
+ * accross all pages for mobile/tablet/desktop screen sizes
+ * Mobile 320px / Tablet 768px / Desktop 1280 px
+*/
+
+.privacy {
+
+    &__container {
+        padding: 0 16px;
+
+            @include tablet {
+                padding: 0 64px;
+            }
+
+            @include desktop {
+                padding: 0 128px;
+            }
+    }
+
+    &__title {
+        margin: 42px 0;
+    }
+
+    &__subtitle {
+        padding: 35px 0 15px 0;
+
+            &-use {
+                padding: 35px 0 15px 0;
+            }
+
+            &-security {
+                padding: 35px 0 15px 0;
+            }
+
+            &-disclosure {
+                padding: 35px 0 15px 0;
+            }
+
+            &-retention {
+                padding: 35px 0 15px 0;
+            }
+
+            &-choices {
+                padding: 35px 0 15px 0;
+            }
+
+            &-children {
+                padding: 35px 0 15px 0;
+            }
+
+            &-changes {
+                padding: 35px 0 15px 0;
+            }
+
+            &-contact {
+                padding: 35px 0 15px 0;
+            }
+    }
+
+    &__updated {
+        padding: 35px 0 15px 0;
+    }
+}
