@@ -1,4 +1,4 @@
-
+![Logo](https://github.com/Deshane-McKenzie/empowershoppe-client/blob/develop/src/assets/logo/empowershoppe-logo.png)
 
 
 
