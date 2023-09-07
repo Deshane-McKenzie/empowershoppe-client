@@ -1,9 +1,11 @@
 @use '../../styles/mixins' as *;
 @use '../../styles/variables' as *;
 
+
 /* 
-* The styling for the return policy page of the website that is universal 
-* accross all pages for mobile/tablet/desktop screen sizes
+ * The styling for the return policy page of the website that is universal 
+ * accross all pages for mobile/tablet/desktop screen sizes
+ * Mobile 320px / Tablet 768px / Desktop 1280 px
 */
 
 .return {
@@ -26,33 +28,34 @@
 
     &__subtitle {
         padding: 35px 0 15px 0;
-        &-eligibility {
-            padding: 35px 0 15px 0;
-        }
 
-        &-process {
-            padding: 35px 0 15px 0;
-        }
+            &-eligibility {
+                padding: 35px 0 15px 0;
+            }
 
-        &-condition {
-            padding: 35px 0 15px 0;
-        }
+            &-process {
+                padding: 35px 0 15px 0;
+            }
 
-        &-inspection {
-            padding: 35px 0 15px 0;
-        }
+            &-condition {
+                padding: 35px 0 15px 0;
+            }
 
-        &-refund {
-            padding: 35px 0 15px 0;
-        }
+            &-inspection {
+                padding: 35px 0 15px 0;
+            }
 
-        &-exceptions {
-            padding: 35px 0 15px 0;
-        }
+            &-refund {
+                padding: 35px 0 15px 0;
+            }
 
-        &-contact {
-            padding: 35px 0 15px 0;
-        }
+            &-exceptions {
+                padding: 35px 0 15px 0;
+            }
+
+            &-contact {
+                padding: 35px 0 15px 0;
+            }
     }
 
     &__statement {

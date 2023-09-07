@@ -5,8 +5,13 @@ import ShowcaseDesignImage from '../../assets/images/ShowcaseDesign.jpg';
 import EasyCheckoutImage from '../../assets/images/EasyCheckout.jpg';
 
 
+/*
+ * Design and Navigation for Home page
+ * Mobile 320px / Tablet 768px / Desktop 1280 px
+*/
 
 function HomePage() {
+
   const navigate = useNavigate();
 
   const handleShopNowNavigation = () => {
@@ -24,7 +29,6 @@ function HomePage() {
               <button className="hero__btn" onClick={handleShopNowNavigation} >Shop Now</button>
             </div>
         </div>
-        <h2>Featured Items</h2>
         <h3 className="help__title">How We Help <span className="help">You!</span></h3>
         <div className="help__container-showcase">
           <img src={ShowcaseDesignImage} className="help__img" alt="Showcase Design" />

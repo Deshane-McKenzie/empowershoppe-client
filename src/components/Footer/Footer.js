@@ -8,6 +8,11 @@ import TwitterIcon from '../../assets/icons/twitter-sign.png';
 import FacebookIcon from '../../assets/icons/facebook.png';
 
 
+/*
+ * Design & Navigation links for the footer section across all pages
+ * Mobile 320px / Tablet 768px / Desktop 1280 px
+*/
+
 function Footer() {
 
 

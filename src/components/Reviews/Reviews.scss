@@ -5,6 +5,7 @@
 /*
  * Styling for both Reviews & Leave a review sections
  * Completed to be viewed on mobile/tablet/desktop screen sizes
+ * Mobile 320px / Tablet 768px / Desktop 1280 px
 */
 
 .review {
@@ -51,7 +52,7 @@
 }
 
 .star.filled {
-    color: #ccbc8e;
+    color: $secondary-color;
 }
 
 .form {
@@ -79,13 +80,13 @@
         padding: 2px 10px;
         font-size: 13px;
 
-            &:focus {
-                outline: none;
+            @include desktop {
+                margin: 22px 96px 15px 96px;
             }
 
-                @include desktop {
-                    margin: 22px 96px 15px 96px;
-                }
+                &:focus {
+                    outline: none;
+                }          
     }
 
     &__last-name {
@@ -95,13 +96,13 @@
         padding: 2px 10px;
         font-size: 13px;
 
-            &:focus {
-                outline: none;
+            @include desktop {
+                margin: 0 96px;
             }
 
-                @include desktop {
-                    margin: 0 96px;
-                }
+                &:focus {
+                    outline: none;
+                }         
     }
 
     &__star-rating {
@@ -120,14 +121,14 @@
         border-radius: 2px;
         font-size: 13px;
 
-            &:focus {
-                outline: none;
+            @include desktop {
+                margin: 5px 96px 0 96px;
             }
 
-                @include desktop {
-                    margin: 5px 96px 0 96px;
+                &:focus {
+                    outline: none;
                 }
-    
+
                     &-wrapper {
                         display: flex;
                         justify-content: center;
@@ -138,7 +139,7 @@
         margin: 15px 0 40px 0;
         border: 1px solid black;
         border-radius: 2px;
-        color: darkred;
+        color: $cta-color;
         cursor: pointer;
 
             &-wrapper{

@@ -2,7 +2,10 @@ import './ProductPageList.scss';
 import { Link } from 'react-router-dom';
 
 
-
+/*
+ * Design for Product Page List at the bottom of Product Page (recommendations)
+ * Mobile 320px / Tablet 768px / Desktop 1280 px
+*/ 
 
 function ProductPageList({productDetails, activeProduct}) {
 
