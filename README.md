@@ -190,11 +190,6 @@ To run this project, you will need to add the following environment variables to
 | N/A      | N/A | Posts to Stripe, then database once payment is successful |
 
 
-## Screenshots
-
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
-
-
 ## Lessons Learned
 
 1 - Know what things are called
@@ -236,4 +231,17 @@ Other features will be created to enhance the User experience and truly allow fo
 ## Feedback
 
 If you have any feedback, please reach out to me at empowershoppe@gmail.com
+
+
+## Screenshots
+
+![Mobile modal](https://github.com/Deshane-McKenzie/empowershoppe-client/blob/develop/Screenshots/Mobile-Modal.png)
+![Desktop Home Page](https://github.com/Deshane-McKenzie/empowershoppe-client/blob/develop/Screenshots/Desktop-HomePage.png)
+![Desktop Product-page](https://github.com/Deshane-McKenzie/empowershoppe-client/blob/develop/Screenshots/Desktop-ProductPage.png)
+![Desktop SearhBar/Checkout-Page](https://github.com/Deshane-McKenzie/empowershoppe-client/blob/develop/Screenshots/Desktop-SearchBar-CheckoutPage.png)
+![Desktop Thank You Page](https://github.com/Deshane-McKenzie/empowershoppe-client/blob/develop/Screenshots/Desktop-ThankYou.png)
+![Desktop Privacy Policy](https://github.com/Deshane-McKenzie/empowershoppe-client/blob/develop/Screenshots/Desktop-PrivacyPolicy.png)
+![Desktop Return Policy](https://github.com/Deshane-McKenzie/empowershoppe-client/blob/develop/Screenshots/Desktop-ReturnPolicy.png)
+
+(Screenshots for other Mobile/Tablet screen sizes found in screenshots folder)
 
