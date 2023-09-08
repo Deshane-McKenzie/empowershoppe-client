@@ -161,6 +161,7 @@ function Checkout() {
               placeholder="First Name"
               value={shippingFirstName}
               onChange={e => setShippingFirstName(e.target.value)}
+              required
             />
           </div>
           <div className="info__background info__field-wrapper">
@@ -172,6 +173,7 @@ function Checkout() {
               placeholder="Last Name"
               value={shippingLastName}
               onChange={e => setShippingLastName(e.target.value)}
+              required
             />
           </div>
           <div className="info__background info__field-wrapper">
@@ -183,6 +185,7 @@ function Checkout() {
               placeholder="Email"
               value={shippingEmail}
               onChange={e => setShippingEmail(e.target.value)}
+              required
             />
           </div>
           <div className="info__background info__field-wrapper">
@@ -194,6 +197,7 @@ function Checkout() {
               placeholder="Street"
               value={shippingStreet}
               onChange={e => setShippingStreet(e.target.value)}
+              required
             />
           </div>
           <div className="info__background info__field-wrapper">
@@ -216,6 +220,7 @@ function Checkout() {
               placeholder="City"
               value={shippingCity}
               onChange={e => setShippingCity(e.target.value)}
+              required
             />
           </div>
           <div className="info__background info__field-wrapper">
@@ -227,6 +232,7 @@ function Checkout() {
               placeholder="Province"
               value={shippingProvince}
               onChange={e => setShippingProvince(e.target.value)}
+              required
             />
           </div>
           <div className="info__background info__field-wrapper">
@@ -238,6 +244,7 @@ function Checkout() {
               placeholder="Country"
               value={shippingCountry}
               onChange={e => setShippingCountry(e.target.value)}
+              required
             />
           </div>
           <div className="info__background info__field-wrapper">
@@ -250,6 +257,7 @@ function Checkout() {
               value={shippingPostalCode}
               onChange={e => setShippingPostalCode(e.target.value)}
               pattern="[A-Za-z]\d[A-Za-z]\d[A-Za-z]\d"
+              required
             />
           </div>
           <div className="info__background info__field-wrapper">
@@ -262,6 +270,7 @@ function Checkout() {
               value={shippingPhoneNumber}
               onChange={e => setShippingPhoneNumber(e.target.value)}
               pattern="[0-9]{10}"
+              required
             />
           </div>
           <div className="info__background info__checkbox-wrapper">
@@ -287,6 +296,7 @@ function Checkout() {
                   placeholder="First Name"
                   value={billingFirstName}
                   onChange={e => setBillingFirstName(e.target.value)}
+                  required
                 />
               </div>
               <div className="info__background info__field-wrapper">
@@ -298,6 +308,7 @@ function Checkout() {
                   placeholder="Last Name"
                   value={billingLastName}
                   onChange={e => setBillingLastName(e.target.value)}
+                  required
                 />
               </div>
               <div className="info__background info__field-wrapper">
@@ -309,6 +320,7 @@ function Checkout() {
                   placeholder="Email"
                   value={billingEmail}
                   onChange={e => setBillingEmail(e.target.value)}
+                  required
                 />
               </div>
               <div className="info__background info__field-wrapper">
@@ -320,6 +332,7 @@ function Checkout() {
                   placeholder="Street"
                   value={billingStreet}
                   onChange={e => setBillingStreet(e.target.value)}
+                  required
                 />
               </div>
               <div className="info__background info__field-wrapper">
@@ -342,6 +355,7 @@ function Checkout() {
                   placeholder="City"
                   value={billingCity}
                   onChange={e => setBillingCity(e.target.value)}
+                  required
                 />
               </div>
               <div className="info__background info__field-wrapper">
@@ -353,6 +367,7 @@ function Checkout() {
                   placeholder="Province"
                   value={billingProvince}
                   onChange={e => setBillingProvince(e.target.value)}
+                  required
                 />
               </div>
               <div className="info__background info__field-wrapper">
@@ -364,6 +379,7 @@ function Checkout() {
                   placeholder="Country"
                   value={billingCountry}
                   onChange={e => setBillingCountry(e.target.value)}
+                  required
                 />
               </div>
               <div className="info__background info__field-wrapper">
@@ -376,6 +392,7 @@ function Checkout() {
                   value={billingPostalCode}
                   onChange={e => setBillingPostalCode(e.target.value)}
                   pattern="[A-Za-z]\d[A-Za-z]\d[A-Za-z]\d"
+                  required
                 />
               </div>
               <div className="info__background info__field-wrapper">
@@ -388,6 +405,7 @@ function Checkout() {
                   value={billingPhoneNumber}
                   onChange={e => setBillingPhoneNumber(e.target.value)}
                   pattern="[0-9]{10}"
+                  required
                 />
               </div>
           </div>
