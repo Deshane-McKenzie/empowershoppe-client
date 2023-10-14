@@ -105,7 +105,7 @@ function Checkout() {
   
                           // Sends the data to the database
                           axios
-                            .post('http://localhost:8000/api/payment', formData, {
+                            .post(`${process.env.REACT_APP_API_BASE_URL}/api/payment`, formData, {
                               headers: {
                                 'Content-Type': 'application/json',
                               },
