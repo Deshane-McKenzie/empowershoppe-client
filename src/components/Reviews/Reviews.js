@@ -50,7 +50,7 @@ function Reviews({ activeReviews, productId, refreshActiveReviews }) {
             };
           
             axios
-              .post('http://localhost:8000/reviews', data)
+              .post(`${process.env.REACT_APP_API_BASE_URL}/reviews`, data)
               .then((response) => {
                 if (response.status === 201) {
                   setResponseMessage(console.log('Review submitted successfully'));

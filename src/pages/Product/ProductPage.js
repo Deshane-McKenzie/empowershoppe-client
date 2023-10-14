@@ -25,13 +25,13 @@ function ProductPage() {
  
   useEffect(() => {
     axios
-    .get('http://localhost:8000/product')
+    .get(`${process.env.REACT_APP_API_BASE_URL}/product`)
     .then((response) => {
       setProductDetails(response.data);
 
       const productId = product_id ?? response.data[0].product_id
 
-     return axios.get(`http://localhost:8000/product/${productId}`)
+     return axios.get(`${process.env.REACT_APP_API_BASE_URL}/product/${productId}`)
 
     })
     .then((response) => {
@@ -44,7 +44,7 @@ function ProductPage() {
         // Function to refresh activeReviews
         const refreshActiveReviews = () => {
           axios
-            .get(`http://localhost:8000/product/${activeProduct.product_id}`)
+            .get(`${process.env.REACT_APP_API_BASE_URL}/product/${activeProduct.product_id}`)
             .then((response) => {
               setActiveReviews(response.data.reviews);
             })
