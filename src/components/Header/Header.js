@@ -30,7 +30,7 @@ function Header() {
 
     //Calls for product information from backend and filters through for the name of the product and displays if letter is typed
     const getData = (value) => {
-    axios.get("http://localhost:8000/product")
+    axios.get(`${process.env.REACT_APP_API_BASE_URL}/product`)
         .then((response) => {
         const filteredResults = response.data.filter((product) => {
             return value && product && product.title && product.title.toLowerCase().includes(value);
